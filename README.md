@@ -16,4 +16,4 @@ If the clock is not 25M, just modify the parameter `CLK_IN` in module module `cl
 
 
 Wave:
-![Wave](doc\wave.png "Wave")
+![Wave](doc/wave.png "Wave")
