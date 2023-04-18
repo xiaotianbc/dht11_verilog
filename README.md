@@ -13,3 +13,7 @@ signal:
 
 
 If the clock is not 25M, just modify the parameter `CLK_IN` in module module `clk_1us_gen`.
+
+
+Wave:
+![Wave](doc\wave.png "Wave")
