@@ -93,7 +93,7 @@ module dht11(
     logic   recv_data_valid;
 
     assign  dht11_data[31:0]    =recv_data[39:8];       //recv data的 7:0是校验位
-    assign recv_data_valid=(recv_data[7:0] == (recv_data[39:32]+recv_data[31:24]+recv_data[23:16]+recv_data[15:8]));
+    assign recv_data_valid=(recv_data[7:0]!='h0) && (recv_data[7:0] == (recv_data[39:32]+recv_data[31:24]+recv_data[23:16]+recv_data[15:8]));
 
     always_ff @( posedge clk) begin
         if (!rst_n) begin
@@ -238,7 +238,7 @@ module dht11(
                 end
             end
             else begin      //其他状态下，都不计数，复位寄存器
-                 start_cnt_data<=1'b0;
+                start_cnt_data<=1'b0;
             end
         end
     end
